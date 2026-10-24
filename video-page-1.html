@@ -1,1 +1,337 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Videos Page 1</title><link rel="stylesheet" href="css/style.css"></head><body data-video-page="1"><header><div class="nav"><a class="brand" href="index.html">RAFIX CAPITAL</a><nav data-site-nav></nav></div></header><main><div class="section-head"><div><h2>Video Library</h2><p class="muted">Page 1 of 15 · 30 slots</p></div><a class="btn" href="index.html">Home</a></div><div id="video-grid" class="grid">Loading videos…</div><div id="video-pager" class="pager"></div><p class="muted">Edit video details in js/videos-data.js.</p></main><footer>© <span data-year></span> RafiX Capital. All rights reserved.</footer><script src="js/common.js"></script><script src="js/videos-data.js"></script><script src="js/videos.js"></script></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070707">
+
+  <title>Videos Page 1 | RafiX Capital</title>
+  <meta name="description" content="Explore videos from RafiX Capital.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #070707;
+      color: #f5f2e8;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #f4d675;
+      text-decoration: none;
+    }
+
+    header {
+      background: #050505;
+      border-bottom: 1px solid #6b5419;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: #d4af37;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 20px 50px;
+    }
+
+    .hero {
+      padding: 35px 20px;
+      text-align: center;
+      border: 1px solid #59471b;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #19150a, #090909);
+    }
+
+    h1, h2 {
+      color: #d4af37;
+    }
+
+    .hero h1 {
+      margin-top: 0;
+    }
+
+    .muted {
+      color: #aaa;
+    }
+
+    .section-head {
+      margin: 28px 0 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: #111;
+      border: 1px solid #382d12;
+      border-radius: 10px;
+    }
+
+    .thumb {
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #080808;
+      color: #89712b;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .thumb img,
+    .thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb video {
+      object-fit: contain;
+    }
+
+    .card-body {
+      padding: 14px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: #f4d675;
+    }
+
+    .card p {
+      color: #aaa;
+      overflow-wrap: anywhere;
+    }
+
+    .play-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 9px 14px;
+      border: 0;
+      border-radius: 5px;
+      background: #d4af37;
+      color: #080808;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .pager {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+
+    .pager a,
+    .pager span {
+      padding: 7px 11px;
+      border: 1px solid #59471b;
+      border-radius: 4px;
+    }
+
+    .pager .active {
+      background: #d4af37;
+      color: #000;
+    }
+
+    footer {
+      padding: 24px 12px;
+      text-align: center;
+      color: #999;
+      border-top: 1px solid #382d12;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 550px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding: 18px 12px 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">RAFIX CAPITAL</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="video-page-1.html">Videos</a>
+        <a href="article-page-1.html">Articles</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Premium Video Library</h1>
+      <p>Think Bigger. Build Capital.</p>
+      <p class="muted">Page 1 of 15 · 30 video slots</p>
+    </section>
+
+    <div class="section-head">
+      <h2>Videos — Page 1</h2>
+      <p class="muted">Empty slots will remain empty until you add video details.</p>
+    </div>
+
+    <section class="grid" id="video-grid">
+      <p class="muted">Loading videos...</p>
+    </section>
+
+    <nav class="pager" aria-label="Video pages">
+      <span class="active">1</span>
+      <a href="video-page-2.html">2</a>
+      <a href="video-page-3.html">3</a>
+      <a href="video-page-4.html">4</a>
+      <a href="video-page-5.html">5</a>
+      <a href="video-page-6.html">6</a>
+      <a href="video-page-7.html">7</a>
+      <a href="video-page-8.html">8</a>
+      <a href="video-page-9.html">9</a>
+      <a href="video-page-10.html">10</a>
+      <a href="video-page-11.html">11</a>
+      <a href="video-page-12.html">12</a>
+      <a href="video-page-13.html">13</a>
+      <a href="video-page-14.html">14</a>
+      <a href="video-page-15.html">15</a>
+    </nav>
+  </main>
+
+  <footer>
+    © 2026 RafiX Capital. All rights reserved.
+  </footer>
+
+  <script src="videos-data.js"></script>
+  <script src="videos.js"></script>
+
+  <script>
+    (function () {
+      const grid = document.getElementById("video-grid");
+
+      if (!grid) return;
+
+      const data = window.RAFIX_VIDEOS || window.videosData || [];
+      const videos = Array.isArray(data) ? data : [];
+
+      const pageVideos = videos.slice(0, 30);
+      grid.innerHTML = "";
+
+      for (let i = 0; i < 30; i++) {
+        const item = pageVideos[i] || {};
+        const title = item.title || "";
+        const description = item.description || "";
+        const url = item.videoUrl || item.url || "";
+        const thumbnail = item.thumbnail || "";
+
+        if (!title && !description && !url && !thumbnail) {
+          const emptyCard = document.createElement("article");
+          emptyCard.className = "card";
+          emptyCard.innerHTML =
+            '<div class="thumb">Video slot ' + (i + 1) +
+            '</div><div class="card-body"><p class="muted">Video coming soon.</p></div>';
+          grid.appendChild(emptyCard);
+          continue;
+        }
+
+        const card = document.createElement("article");
+        card.className = "card";
+
+        const thumb = document.createElement("div");
+        thumb.className = "thumb";
+
+        if (thumbnail) {
+          const img = document.createElement("img");
+          img.src = thumbnail;
+          img.alt = title || "Video thumbnail";
+          thumb.appendChild(img);
+        } else {
+          thumb.textContent = "RafiX Capital";
+        }
+
+        const body = document.createElement("div");
+        body.className = "card-body";
+
+        const heading = document.createElement("h3");
+        heading.textContent = title || ("Video " + (i + 1));
+        body.appendChild(heading);
+
+        if (description) {
+          const desc = document.createElement("p");
+          desc.textContent = description;
+          body.appendChild(desc);
+        }
+
+        if (url) {
+          const button = document.createElement("button");
+          button.className = "play-btn";
+          button.textContent = "▶ Play Video";
+
+          button.addEventListener("click", function () {
+            const video = document.createElement("video");
+            video.controls = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            video.src = url;
+            video.style.width = "100%";
+            video.style.height = "100%";
+
+            thumb.replaceChildren(video);
+            video.play().catch(function () {});
+          });
+
+          body.appendChild(button);
+        }
+
+        card.appendChild(thumb);
+        card.appendChild(body);
+        grid.appendChild(card);
+      }
+    })();
+  </script>
+
+</body>
+</html>
