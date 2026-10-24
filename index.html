@@ -1,1 +1,315 @@
-
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="RafiX Capital — Premium videos, financial education, market insights and exclusive articles.">
+<title>RafiX Capital | Premium Knowledge</title>
+<style>
+:root {
+  --bg:#080808;
+  --panel:#111111;
+  --gold:#d6ad55;
+  --gold-light:#f3d88b;
+  --text:#f6f3eb;
+  --muted:#a7a39a;
+  --border:#29251b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(1180px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(8,8,8,.96);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(14px);
+}
+.nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;
+}
+.brand{font-size:23px;font-weight:900;letter-spacing:1px}
+.brand span{color:var(--gold)}
+.brand small{display:block;font-size:9px;letter-spacing:4px;color:var(--muted)}
+nav{display:flex;align-items:center;gap:23px;font-size:13px}
+nav a:hover,.gold{color:var(--gold)}
+.menu-btn{
+  display:none;background:none;border:1px solid var(--border);
+  color:var(--gold);padding:8px 12px;border-radius:7px;
+}
+.hero{
+  padding:78px 0 64px;
+  background:radial-gradient(ellipse at 75% 20%,#332713 0,transparent 43%),
+             linear-gradient(120deg,#090909,#100e09);
+  border-bottom:1px solid var(--border);
+}
+.eyebrow{
+  color:var(--gold);font-size:11px;font-weight:bold;
+  letter-spacing:3px;text-transform:uppercase;
+}
+.hero h1{
+  max-width:760px;font-size:clamp(39px,7vw,76px);
+  line-height:1.06;margin:18px 0;
+  letter-spacing:-2px;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:610px;color:var(--muted);font-size:16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.btn{
+  display:inline-block;border:1px solid var(--gold);
+  padding:12px 19px;border-radius:5px;font-weight:bold;font-size:13px;
+}
+.btn.primary{background:var(--gold);color:#100d06}
+.btn:hover{background:var(--gold-light);color:#111}
+.stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:42px}
+.stat strong{display:block;color:var(--gold);font-size:22px}
+.stat span{font-size:11px;color:var(--muted)}
+.section{padding:52px 0}
+.section-head{
+  display:flex;justify-content:space-between;align-items:end;
+  gap:16px;margin-bottom:23px;flex-wrap:wrap;
+}
+.section-head h2{font-size:27px;margin:5px 0 0}
+.section-head p{margin:0;color:var(--muted);font-size:13px}
+.search-wrap{display:flex;gap:8px;width:min(390px,100%)}
+.search-wrap input{
+  width:100%;background:#111;color:white;
+  border:1px solid var(--border);border-radius:5px;padding:11px 13px;
+  outline:none;min-width:0;
+}
+.search-wrap input:focus{border-color:var(--gold)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter{
+  background:#111;border:1px solid var(--border);color:#c5c0b4;
+  border-radius:30px;padding:8px 15px;font-size:12px;
+}
+.filter.active,.filter:hover{
+  background:var(--gold);border-color:var(--gold);color:#111;
+}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:9px;overflow:hidden;transition:.2s;
+}
+.card:hover{transform:translateY(-4px);border-color:#8c7139}
+.thumb{
+  aspect-ratio:16/9;background:
+  radial-gradient(ellipse at 70% 30%,#4c3918,transparent 50%),#17140e;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.thumb::before{
+  content:"";position:absolute;width:130px;height:130px;
+  border:1px solid #6c5428;border-radius:50%;
+}
+.play{
+  width:49px;height:49px;border-radius:50%;
+  background:var(--gold);color:#111;display:grid;
+  place-items:center;font-size:18px;padding-left:3px;z-index:1;
+}
+.thumb-label{
+  position:absolute;left:12px;top:12px;
+  background:#080808cc;border:1px solid #554526;
+  color:var(--gold-light);font-size:10px;padding:4px 8px;border-radius:3px;
+}
+.card-body{padding:17px}
+.meta{font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
+.card h3{font-size:17px;line-height:1.4;margin:9px 0}
+.card p{color:var(--muted);font-size:13px;margin:0 0 15px}
+.card-foot{
+  display:flex;justify-content:space-between;gap:8px;
+  border-top:1px solid var(--border);padding-top:12px;
+  color:var(--muted);font-size:11px;
+}
+.read-link{color:var(--gold);font-weight:bold}
+.empty{grid-column:1/-1;padding:35px;text-align:center;color:var(--muted)}
+.feature{
+  background:linear-gradient(120deg,#17130a,#0c0c0c);
+  border:1px solid #49391c;border-radius:10px;padding:30px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:25px;flex-wrap:wrap;
+}
+.feature h2{font-size:27px;margin:9px 0}
+.feature p{color:var(--muted);max-width:600px}
+footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font-size:12px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.modal{
+  display:none;position:fixed;inset:0;z-index:50;
+  background:#000e;align-items:center;justify-content:center;padding:18px;
+}
+.modal.open{display:flex}
+.modal-box{
+  width:min(760px,100%);max-height:90vh;overflow:auto;
+  background:#111;border:1px solid #5b4723;border-radius:10px;padding:24px;
+}
+.modal-close{
+  float:right;background:#242016;color:var(--gold);
+  border:1px solid var(--border);padding:7px 12px;border-radius:5px;
+}
+.modal h2{color:var(--gold)}
+.modal p{color:#c5c0b4;white-space:pre-line}
+@media(max-width:800px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  nav{gap:13px}
+}
+@media(max-width:600px){
+  .nav{min-height:67px;flex-wrap:wrap;padding:10px 0}
+  .brand{font-size:20px}
+  .menu-btn{display:block}
+  nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding:8px 0 14px}
+  nav.open{display:flex}
+  nav a{padding:7px 0}
+  .hero{padding:53px 0 43px}
+  .hero h1{letter-spacing:-1px}
+  .hero p{font-size:14px}
+  .stats{gap:22px;margin-top:30px}
+  .section{padding:38px 0}
+  .section-head h2{font-size:23px}
+  .grid{grid-template-columns:1fr;gap:15px}
+  .feature{padding:22px}
+}
+</style>
+</head>
+<body><header>
+  <div class="container nav">
+    <a class="brand" href="#home">RafiX <span>Capital</span><small>KNOWLEDGE • STRATEGY • GROWTH</small></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰ MENU</button>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#videos">Videos</a>
+      <a href="#articles">Articles</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header><main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="eyebrow">The Premium Knowledge Platform</div>
+    <h1>Think Smarter.<br>Build <span>Greater.</span></h1>
+    <p>Discover premium videos, insightful articles and practical knowledge designed to help you understand markets, strategy and personal growth.</p>
+    <div class="actions">
+      <a class="btn primary" href="#videos">▶ Explore Videos</a>
+      <a class="btn" href="#articles">Read Articles ↗</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>Premium</strong><span>Curated Knowledge</span></div>
+      <div class="stat"><strong>Video + Text</strong><span>Learn Your Way</span></div>
+      <div class="stat"><strong>Always Growing</strong><span>Fresh Insights</span></div>
+    </div>
+  </div>
+</section><section class="section" id="videos">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Watch & Learn</div><h2>Featured Videos</h2><p>Explore our video library.</p></div>
+      <div class="search-wrap"><input id="search" type="search" placeholder="Search videos and articles..." aria-label="Search content"></div>
+    </div>
+    <div class="filters" id="filters">
+      <button class="filter active" data-filter="All">All Content</button>
+      <button class="filter" data-filter="Finance">Finance</button>
+      <button class="filter" data-filter="Education">Education</button>
+      <button class="filter" data-filter="Strategy">Strategy</button>
+      <button class="filter" data-filter="Insights">Insights</button>
+    </div>
+    <div class="grid" id="videoGrid"></div>
+  </div>
+</section><section class="section" id="articles">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Ideas That Matter</div><h2>Latest Articles</h2><p>Thoughtful reads for curious minds.</p></div>
+    </div>
+    <div class="grid" id="articleGrid"></div>
+  </div>
+</section><section class="section" id="about">
+  <div class="container">
+    <div class="feature">
+      <div><div class="eyebrow">About RafiX Capital</div>
+        <h2>Knowledge is an advantage.</h2>
+        <p>RafiX Capital is being built as a premium destination for educational videos and valuable articles. Our goal is to make useful knowledge accessible through a clean, focused experience.</p>
+      </div>
+      <a class="btn primary" href="#videos">Explore the Library ↗</a>
+    </div>
+  </div>
+</section>
+</main><footer>
+  <div class="container footer-row">
+    <div><strong style="color:var(--gold)">RafiX Capital</strong><br>Knowledge • Strategy • Growth</div>
+    <div>© <span id="year"></span> RafiX Capital. All rights reserved.</div>
+  </div>
+</footer><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">✕ Close</button>
+    <div id="modalContent"></div>
+  </div>
+</div><script>
+const videos = [
+ {title:"Understanding Financial Markets",category:"Finance",type:"Video",description:"An introductory guide to understanding markets, risk and the importance of informed decisions.",duration:"Video coming soon"},
+ {title:"Building a Strong Learning Strategy",category:"Strategy",type:"Video",description:"Explore how structured learning and consistent habits can help you build long-term skills.",duration:"Video coming soon"},
+ {title:"The Power of Financial Education",category:"Education",type:"Video",description:"Learn why financial knowledge matters and how to approach new information thoughtfully.",duration:"Video coming soon"},
+ {title:"Thinking Clearly in a Noisy World",category:"Insights",type:"Video",description:"A practical introduction to critical thinking, research and evaluating information.",duration:"Video coming soon"},
+ {title:"Risk, Patience and Better Decisions",category:"Finance",type:"Video",description:"Discover foundational ideas about risk management, patience and decision-making.",duration:"Video coming soon"},
+ {title:"Create Your Personal Growth Plan",category:"Strategy",type:"Video",description:"A simple framework for setting goals, tracking progress and developing useful skills.",duration:"Video coming soon"}
+];
+const articles = [
+ {title:"A Beginner's Guide to Financial Literacy",category:"Education",type:"Article",description:"Understand budgeting, saving, risk and the foundations of financial literacy.",body:"Financial literacy starts with understanding how money works. Learn to track expenses, build savings, evaluate risk and research financial decisions before acting.\n\nThis article is an educational introduction, not personalized financial advice."},
+ {title:"Why Risk Management Matters",category:"Finance",type:"Article",description:"Learn why identifying and managing risk is an essential part of sound decision-making.",body:"Every meaningful decision involves uncertainty. Risk management begins by identifying what can go wrong, understanding potential consequences and avoiding commitments you cannot afford.\n\nResearch carefully and remember that no strategy can eliminate all risk."},
+ {title:"Building Consistent Learning Habits",category:"Strategy",type:"Article",description:"Small, consistent learning sessions can create a stronger foundation over time.",body:"Choose one useful topic, set a realistic learning schedule and take notes. Review what you learn and test your understanding with practical examples.\n\nConsistency and critical thinking matter more than collecting information without applying it."}
+];
+let activeFilter="All";
+const videoGrid=document.getElementById("videoGrid");
+const articleGrid=document.getElementById("articleGrid");
+const search=document.getElementById("search");
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function card(item,index){
+ const article=item.type==="Article";
+ return `<article class="card">
+ <div class="thumb"><span class="thumb-label">${escapeHTML(item.category)}</span>
+ <span class="play">${article?"✎":"▶"}</span></div>
+ <div class="card-body"><div class="meta">${escapeHTML(item.type)} · ${escapeHTML(item.category)}</div>
+ <h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.description)}</p>
+ <div class="card-foot"><span>${article?"Reading":"Preview"}</span>
+ <a class="read-link" href="#" data-kind="${article?"article":"video"}" data-index="${index}">${article?"Read article ↗":"View details ↗"}</a></div></div></article>`;
+}
+function render(){
+ const q=search.value.trim().toLowerCase();
+ const filteredV=videos.map((x,i)=>({...x,_i:i})).filter(x=>(activeFilter==="All"||x.category===activeFilter)&&(`${x.title} ${x.category} ${x.description}`).toLowerCase().includes(q));
+ const filteredA=articles.map((x,i)=>({...x,_i:i})).filter(x=>(activeFilter==="All"||x.category===activeFilter)&&(`${x.title} ${x.category} ${x.description}`).toLowerCase().includes(q));
+ videoGrid.innerHTML=filteredV.length?filteredV.map(x=>card(x,x._i)).join(""):'<div class="empty">No matching videos found.</div>';
+ articleGrid.innerHTML=filteredA.length?filteredA.map(x=>card(x,x._i)).join(""):'<div class="empty">No matching articles found.</div>';
+}
+document.getElementById("filters").addEventListener("click",e=>{
+ const b=e.target.closest("button[data-filter]");if(!b)return;
+ activeFilter=b.dataset.filter;
+ document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));render();
+});
+search.addEventListener("input",render);
+document.addEventListener("click",e=>{
+ const a=e.target.closest("[data-kind]");if(!a)return;
+ e.preventDefault();
+ const item=a.dataset.kind==="article"?articles[Number(a.dataset.index)]:videos[Number(a.dataset.index)];
+ if(!item)return;
+ document.getElementById("modalTitle")?.remove();
+ const content=document.getElementById("modalContent");
+ if(item.type==="Article"){
+ content.innerHTML=`<div class="eyebrow">${escapeHTML(item.category)} · ARTICLE</div><h2 id="modalTitle">${escapeHTML(item.title)}</h2><p>${escapeHTML(item.body)}</p><p style="font-size:11px">Educational content only. Not financial advice.</p>`;
+ }else{
+ content.innerHTML=`<div class="eyebrow">${escapeHTML(item.category)} · VIDEO</div><h2 id="modalTitle">${escapeHTML(item.title)}</h2><p>${escapeHTML(item.description)}</p><div style="padding:22px;background:#080808;border:1px solid #332817;border-radius:6px;text-align:center;color:#d6ad55">Video player will be connected after video storage setup.</div><p style="font-size:11px">This is a preview card. No video file has been uploaded yet.</p>`;
+ }
+ document.getElementById("modal").classList.add("open");
+});
+function closeModal(){document.getElementById("modal").classList.remove("open")}
+document.getElementById("modalClose").addEventListener("click",closeModal);
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("nav").classList.toggle("open"));
+document.querySelectorAll("#nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
+document.getElementById("year").textContent=new Date().getFullYear();
+render();
+</script></body>
+</html>
