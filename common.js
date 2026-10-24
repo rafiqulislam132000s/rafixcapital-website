@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{let n=document.querySelector('[data-site-nav]');if(n)n.innerHTML='<a href="index.html">Home</a><a href="video-page-1.html">Videos</a><a href="article-page-1.html">Articles</a>';document.querySelectorAll('[data-year]').forEach(x=>x.textContent=new Date().getFullYear())});
